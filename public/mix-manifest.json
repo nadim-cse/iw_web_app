@@ -1,4 +1,5 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/admin-dashboard.js": "/js/admin-dashboard.js?id=aca41a4187109977763ab3ca6859cdb7",
+    "/js/admin-settings.js": "/js/admin-settings.js?id=d108aadeef4b1d105cb2fc06ea22d71f",
+    "/css/app.css": "/css/app.css?id=0b39bf274b3cacd589a356559e2ba8e1"
 }

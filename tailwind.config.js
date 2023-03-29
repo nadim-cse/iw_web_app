@@ -5,6 +5,7 @@ module.exports = {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/js/**/*.vue',
     ],
 
     theme: {
@@ -13,10 +14,6 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
-    },
-
-    variants: {
-        
     },
 
     plugins: [require('@tailwindcss/forms')],

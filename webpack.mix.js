@@ -11,8 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
+mix
+// .js('resources/js/app.js', 'public/js')
+.vue()
+.js('resources/js/admin/admin-dashboard/admin-dashboard.js', 'public/js').version()
+.js('resources/js/admin/admin-settings/admin-settings.js', 'public/js').version()
+.postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
     require('autoprefixer'),
 ]);

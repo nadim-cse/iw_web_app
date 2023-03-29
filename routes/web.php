@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\Admin\Dashboard\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +14,21 @@ use App\Http\Controllers\PostsController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::group([], function () {
-//     Route::get('/', 'HomeController@index')->name('home');
-//  });
+Route::group([
+        'middleware' => 'auth'
+    ], function () {
+    
+    
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/settings', [DashboardController::class, 'settings'])->name('settings');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+    // include_once 'frontend/folder.php';
+    // include_once 'frontend/items.php';
+    // include_once 'frontend/category.php';
+});
 
-// require __DIR__.'/auth.php';
-
-Route::get('/', [PagesController::class, 'index']);
-
-Route::resource('/blog', PostsController::class);
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+require __DIR__.'/auth.php';

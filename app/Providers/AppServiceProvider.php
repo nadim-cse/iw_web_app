@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Models\Post;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,12 +23,27 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //
+       
+        // view()->composer('*',function($view) {
+        //     $sidebarMenuItems = [
 
-        
-
-        view()->composer('layouts.app',function ($view){
-            $latestPosts = Post::latest()->take(4)->get();
-            $view->with('latestPosts', $latestPosts);
-           });
+        //         'dashboard' => [
+        //             'icon' => 'fad fa-chart-pie',
+        //             'name' => 'Dashboard',
+        //             'route' => 'dashboard',
+        //             'is_dropdown' => 1
+                
+        //         ],
+        //         'ecommerce' => [
+        //             'icon' => 'fad fa-envelope-open-text',
+        //             'name' => 'eCommerce',
+        //             'route' => 'settings',
+        //             'is_dropdown' => 1
+                
+        //         ]
+        //     ];
+        //     $view->with('sidebarMenuItems',$sidebarMenuItems);
+        // });
     }
 }
